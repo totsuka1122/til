@@ -23,3 +23,9 @@ func add(x, y int) int {
     return x + y
 }
 ```
+
+# 変数の宣言
+
+`var x int`  
+`var x = 1`  
+`x := 1`※関数の外で定義できない
