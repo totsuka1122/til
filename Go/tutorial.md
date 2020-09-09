@@ -1,5 +1,5 @@
 # rand/math
-乱数の作成
+乱数の作成  
 Seedで完全な乱数の作成
 ```
 package main
