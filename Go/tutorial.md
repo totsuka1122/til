@@ -21,3 +21,20 @@ func add(x, y int) int {
 `var x int`  
 `var x = 1`  
 `x := 1`※関数の外で定義できない
+
+# 変数と定数
+
+変数・・・途中で書き換え可  
+定数・・・途中で書き換え不可  
+
+```
+// 変数
+var x int = 11
+x = 12
+fmt.Println(x) // 12
+
+// 定数
+const Pi = 3.14
+Pi = 3
+fmt.Println(Pi) //Error: cannot assign to Pi
+```
