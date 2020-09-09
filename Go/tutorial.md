@@ -15,3 +15,11 @@ func main() {
     fmt.Println("My favarite number is", rand.Intn(10))
 }
 ```
+
+# 引数の省略
+関数の２つ以上の引数が同じ型である場合には、最後の型を残して省略可。
+```
+func add(x, y int) int {
+    return x + y
+}
+```
