@@ -50,3 +50,11 @@ func sum(a, b int) int {
     return v // Error
 }
 ```
+
+# Defer
+deferへ渡した関数の実行を、呼び出し元の関数の終わり(returnする)まで遅延させる
+```
+func main() {
+    defer fmt.Println("World")
+    fmt.Println("Hello")
+}
