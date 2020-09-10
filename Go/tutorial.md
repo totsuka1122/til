@@ -43,7 +43,7 @@ fmt.Println(Pi) //Error: cannot assign to Pi
 for同様、条件の前に簡単なステートメントの記述が可能  
 ※ifスコープ内のみ有効
 ```
-func sum(a, b int) {
+func sum(a, b int) int {
     if v := a + b; v < 100 {
         return v
     }
