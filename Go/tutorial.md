@@ -38,3 +38,15 @@ const Pi = 3.14
 Pi = 3
 fmt.Println(Pi) //Error: cannot assign to Pi
 ```
+
+# if 条件の前に簡単なステートメントの記述
+for同様、条件の前に簡単なステートメントの記述が可能  
+※ifスコープ内のみ有効
+```
+func sum(a, b int) {
+    if v := a + b; v < 100 {
+        return v
+    }
+    return v // Error
+}
+```
