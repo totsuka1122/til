@@ -52,7 +52,8 @@ func sum(a, b int) int {
 ```
 
 # Defer
-deferへ渡した関数の実行を、呼び出し元の関数の終わり(returnする)まで遅延させる
+deferへ渡した関数の実行を、呼び出し元の関数の終わり(returnする)まで遅延させる  
+※関数が複数ある場合スタックされる
 ```
 func main() {
     defer fmt.Println("World")
