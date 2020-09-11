@@ -59,3 +59,13 @@ func main() {
     defer fmt.Println("World")
     fmt.Println("Hello")
 }
+```
+
+# struct
+goにはclassが存在しないため、struct(構造体)が使用される
+```
+type Person struct {
+   first_name string 
+   age int
+}
+```
