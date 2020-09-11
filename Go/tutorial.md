@@ -62,10 +62,17 @@ func main() {
 ```
 
 # struct
-goにはclassが存在しないため、struct(構造体)が使用される
+goにはclassが存在しないため、struct(構造体)が使用される  
+フィールドはドット(.)を用いてアクセスする
 ```
-type Person struct {
-   first_name string 
-   age int
+type Vertex struct {
+    x int
+    y int
+}
+
+func main() {
+    v := Vertex{1, 2}
+    v.x = 4
+    fmt.Println(v.x)
 }
 ```
