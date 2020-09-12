@@ -90,3 +90,15 @@ func main() {
     fmt.Println(primes) //[2, 3, 5, 7, 11, 13]
 }
 ```
+
+# for ~ range
+1つ目の変数(i)はインデックス、2つ目の変数(v)は配列の値
+```
+var pow = []int{1, 2, 4, 8, 16, 32, 64, 128}
+
+func main() {
+	for i, v := range pow {
+		fmt.Printf("%d , %d\n", i, v)
+	}
+}
+```
