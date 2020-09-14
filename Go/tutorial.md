@@ -76,6 +76,12 @@ func main() {
     fmt.Println(v.x)
 }
 ```
+```初期化2
+func main() {
+    v := Vertex{x: 4, y: 6}
+    fmt.Println(v)
+}
+```
 
 # 配列
 ```
@@ -101,5 +107,24 @@ func main() {
 	for i, v := range pow {
 		fmt.Printf("%d , %d\n", i, v)
 	}
+}
+```
+
+# map
+連想配列
+```
+type Student struct {
+    math int
+    english int
+}
+
+var m map[string]Student
+
+func main() {
+    m = make(map[string]Student)
+    m["taro"] = Student{60, 70}
+    fmt.Println(m["taro"])
+    
+    // {60 70}
 }
 ```
