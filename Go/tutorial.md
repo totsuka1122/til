@@ -76,7 +76,8 @@ func main() {
     fmt.Println(v.x)
 }
 ```
-```初期化2
+以下の書き方もok
+```
 func main() {
     v := Vertex{x: 4, y: 6}
     fmt.Println(v)
