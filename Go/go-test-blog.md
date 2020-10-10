@@ -44,8 +44,6 @@ import (
 )
 
 func main() {
-	// http.HandleFunc("/", DiceHandler)
-	// http.ListenAndServe(":8888", nil)
 	fs := http.FileServer(http.Dir("pub"))
 	http.Handle("/", fs)
 	http.HandleFunc("/dice", DiceHandler)
