@@ -31,3 +31,36 @@ func HelloHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 ```
+
+## HTMLファイルの表示
+
+```go
+package main
+
+import (
+	"fmt"
+	"math/rand"
+	"net/http"
+)
+
+func main() {
+	// http.HandleFunc("/", DiceHandler)
+	// http.ListenAndServe(":8888", nil)
+	fs := http.FileServer(http.Dir("pub"))
+	http.Handle("/", fs)
+	http.HandleFunc("/dice", DiceHandler)
+	http.ListenAndServe(":8888", nil)
+}
+
+func DiceHandler(w http.ResponseWriter, r *http.Request) {
+	v := rand.Intn(6) + 1
+	s := fmt.Sprintf("サイコロの目は、 %d", v)
+	w.Write([]byte(s))
+}
+```
+```
+.
+├── hello_server.go
+└── pub
+    └── index.html
+```
