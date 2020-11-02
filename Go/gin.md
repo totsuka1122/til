@@ -1,7 +1,10 @@
 ## about gin
 
 gin installation:  
-https://github.com/gin-gonic/gin#installation
+https://github.com/gin-gonic/gin#installation  
+
+official:  
+https://gin-gonic.com/docs/
 
 ## to install gin
 ```
