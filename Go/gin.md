@@ -4,7 +4,10 @@ gin installation:
 https://github.com/gin-gonic/gin#installation  
 
 official:  
-https://gin-gonic.com/docs/
+https://gin-gonic.com/docs/  
+
+Qiita (gin template)  
+https://qiita.com/lanevok/items/dbf591a3916070fcba0d
 
 ## to install gin
 ```
