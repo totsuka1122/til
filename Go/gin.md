@@ -77,10 +77,10 @@ func main() {
 	}
 
 	router := gin.Default()                       //define gin variable
-	router.Static("styles", "./styles")           //difine static directory(ex css)
+	router.Static("styles", "./styles")           
 	router.LoadHTMLFiles("./template/index.html") //define HTML file
 
-	router.GET("/todo", func(c *gin.Context) { //c = ctx = context : 文脈・状態 // *gin.Contextは型!!
+	router.GET("/todo", func(c *gin.Context) { 
 		c.HTML(http.StatusOK, "index.html", map[string]interface{}{
 			"todo": todo,
 		})
