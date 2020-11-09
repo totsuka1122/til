@@ -57,6 +57,8 @@ type Todo struct {
 	Human      string
 	Content    string
 	Status     int
+	// CreatedAtS: time.Now().Format("2006-01-03 15:04:05"),
+
 }
 
 func main() {
