@@ -97,3 +97,15 @@ func main() {
       <li>{{.CtreatedAt}}{{.Human}}{{.Content}}{{.Status}}</li>
     {{end}}
 ```
+```HTML
+<!-- 条件分岐 -->
+    {{range .todo}}
+    <li>{{.CtreatedAt}} {{.Human}} {{.Content}} 
+          {{if eq .Status 0}}
+            未
+          {{else}}
+            完了
+          {{end}}
+    </li>
+    {{end}}
+```
