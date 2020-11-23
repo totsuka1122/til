@@ -11,7 +11,7 @@ https://qiita.com/zembutsu/items/6e1ad18f0d548ce6c266
 
 https://hub.docker.com/_/golang
 
-### dockerfile for golang
+### Dockerfile for golang
 
 ```dockerfile
 # Dockerfile
