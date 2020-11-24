@@ -129,3 +129,14 @@ func main() {
     // {60 70}
 }
 ```
+
+# ポインタ
+
+```go
+var a int = 10
+var aPtr *int = &a //define pointer of a
+*aPtr += 1 //update a's pointer
+fmt.Println(a)
+
+// 11
+```
