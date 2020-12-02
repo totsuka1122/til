@@ -35,3 +35,12 @@ services:
     volumes:
       - .:/go/src/work # マウントディレクトリ指定
 ```
+
+## MySQL
+
+```bash
+$ docker pull mysql  
+$ docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:latest
+```
+- `--name`の後ろはコンテナ名
+- `MYSQL_ROOT_PASSWORD=`の後ろはパスワード
