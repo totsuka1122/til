@@ -17,16 +17,20 @@
   - アドレス確認： `$ git config user.email`
   - エディタ確認： `$ git config core.editor`
 
-## コマンド
+## 基礎
   - `$ git init` → `.git`ディレクトリが作成される（objects-リポジトリの本体, config-設定ファイル, index-ステージングした後）
   - `$ git status` → 現在の状態確認
   - `$ git clone <リポジトリ名>`
   - `$ git add <ファイル名/ディレクトリ名/.>`
-  - `$ git commit`で指定のエディタを開く - `$ git commit -v`ファイルの変更内容をエディタで確認
+  - `$ git commit` - 指定のエディタを開く
+  - `$ git commit -v` - ファイルの変更内容を確認する
   - `$ git diff` - git addする前の変更分(ワークツリーとステージの差分)
   - `$ git diff <ファイル名>` - git addする前の変更分(ワークツリーとステージの差分)
   - `$ git diff --staged` - git addした後の変更分(ステージとリポジトリの差分)
-  - `$ git log` - 変更履歴の表示
-  - `$ git log --online` - 1行で表示する
+  - `$ git log` - 変更履歴の表示(1つ前のコミットとの差分を表示)
+  - `$ git log --oneline` - 1行で表示する
   - `$ git log -p <ファイル名>` - ファイルの変更差分を表示する
   - `$ git log -n <コミット数>` - 表示するコミット数を制限する
+  - `$ git rm <ファイル名>` - コミットされた記録が削除 & ワークツリーも削除
+  - `$ git rm -r <ディレクトリ名>` - コミットされた記録が削除 & ワークツリーも削除
+  - `$ git rm --cached <ファイル名>` - ワークツリーのファイルは残したい時（gitの記録からだけ削除)
