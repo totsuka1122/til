@@ -11,15 +11,16 @@
   - ユーザー登録： `$ git config --global user.name "githubに登録してあるユーザー名"`
   - アドレス登録： `$ git config --global user.email 自分のメールアドレス`
   - エディタの登録： `$ git config --global core.editor "エディタ名 --wait"`  
-    `$ git commit`で指定のエディタを開く
 - 確認
   - 全確認： `$ git config --list`
   - ユーザー確認： `$ git config user.name`
   - アドレス確認： `$ git config user.email`
   - エディタ確認： `$ git config core.editor`
 
-## ローカルリポジトリ
- - `$ git init` → `.git`ディレクトリが作成される（objects-リポジトリの本体, config-設定ファイル, index-ステージングした後）
- 
-## git clone
-- `$ git clone リポジトリ名`
+## コマンド
+  - `$ git init` → `.git`ディレクトリが作成される（objects-リポジトリの本体, config-設定ファイル, index-ステージングした後）
+  - `$ git status` → 現在の状態確認
+  - `$ git clone リポジトリ名`
+  - `$ git add ファイル名/ディレクトリ名/.`
+  - `$ git commit 
+  - `$ git commit`で指定のエディタを開く - `$ git commit -v`ファイルの変更内容をエディタで確認
