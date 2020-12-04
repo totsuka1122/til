@@ -46,5 +46,18 @@
   - `$ git push origin <ブランチ名>` - `-u`を付けると、今後`git push`のみでokとなる
   
 ## .gitignore
-  ```
+  ```.gitignore
   # #から始まる行はコメント行
+  
+  # 指定したファイルを除外
+  index.html
+  
+  # ルートディレクトリを指定
+  /root.html
+  
+  # ディレクトリ以下を除外
+  dir/
+  
+  # ワイルドカード「*」
+  /*/*.css
+  ```
