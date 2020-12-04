@@ -34,3 +34,17 @@
   - `$ git rm <ファイル名>` - コミットされた記録が削除 & ワークツリーも削除
   - `$ git rm -r <ディレクトリ名>` - コミットされた記録が削除 & ワークツリーも削除
   - `$ git rm --cached <ファイル名>` - ワークツリーのファイルは残したい時（gitの記録からだけ削除)
+  - `$ git mv <旧ファイル> <新ファイル>` - ワークツリーのファイル名を変更し、ステージにも変更を追加
+  - `$ git config --global aloas.<ショートカット> <コマンド>` - そのコマンドのショートカットを作成できる
+    -`$ git config --global alias.ci commit`
+    -`$ git config --global alias.st status`
+    -`$ git config --global alias.br branch`
+    -`$ git config --global alias.co checkout`
+
+## リモートリポジトリ
+  - `$ git remote add origin <URL>` - リモートリポジトリを新規追加
+  - `$ git push origin <ブランチ名>` - `-u`を付けると、今後`git push`のみでokとなる
+  
+## .gitignore
+  ```
+  # #から始まる行はコメント行
