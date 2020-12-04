@@ -41,9 +41,31 @@
     -`$ git config --global alias.br branch`
     -`$ git config --global alias.co checkout`
 
-## リモートリポジトリ
-  - `$ git remote add origin <URL>` - リモートリポジトリを新規追加
-  - `$ git push origin <ブランチ名>` - `-u`を付けると、今後`git push`のみでokとなる
+## リモートリポジトリ(複数登録可)
+  - `$ git remote add <リモート名(origin)> <URL>` - リモートリポジトリを新規作成
+  - `$ git push <リモート名(origin)> <ブランチ名>` - `-u`を付けると、今後`git push`のみでokとなる
+  - `$ git remote -v` - 対応するURLを表示
+  
+#### リモートから取得(fetch)
+  - `$ git fetch <リモート名(origin)>` - リモートリポジトリからローカルリポジトリに取得(ワークツリーには未反映)
+    - ↑`remotes/<リモート名>/<ブランチ名>`に保存
+  - `$ git merge` - ローカルリポジトリに取得したものをワークツリーにコピー
+
+#### リモートから取得(pull)
+  
+  
+## 変更を元に戻す
+- ファイルへの変更を取り消す（ワークツリーを作業前の状態に戻す）
+  - `$ git checkout -- <ファイル名>` - 特定のファイル
+  - `$ git checkout -- <ディレクトリ名>` - 特定のディレクトリ全て
+  - `$ git checkout -- .` - 全て
+- ステージに追加した変更を元に戻す(ワークツリーはそのままで、直前のコミットの内容をステージに上書き)
+  - `$ git reset HEAD <ファイル名>` - 特定のファイル
+  - `$ git reset HEAD <ディレクトリ名>` - 特定のディレクトリ
+  - `$ git reset HEAD .` - 全て
+- 直前のコミットを修正する
+  - `$ git commit --amend` - 修正内容を再度コミットし、直前のコミットを上書きできる（リモートリポジトリにpushしたコミットは修正しない）
+  
   
 ## .gitignore
   ```.gitignore
