@@ -56,7 +56,9 @@
 
 #### リモートから取得(pull)
 - `$ git pull <リモート名> <ブランチ名>` - `git fetch` + `git merge` = `git pull`
-- `$ git pull --rebase <リモート名> <ブランチ名>` - 
+- `$ git pull --rebase <リモート名> <ブランチ名>` - マージコミットが残らない(`git fetch` + `git rebase` = `git pull`)
+- `$ git config --global pull.rebase true` - プルをリベース型として設定する
+- `$ git config branch.master.rebase true` - masterブランチのみプルをリベース型として設定する
   
 #### リモートを変更or削除
 - `$ git remote rename <旧リモート名> <新リモート名>` - リモート名の変更
