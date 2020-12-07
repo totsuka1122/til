@@ -121,7 +121,17 @@
     ※ `git push origin master`では、タグは付与されない
 - `$ git push <リモート名> --tags` - タグを一斉に送信する
 
-  
+## 一時保存
+作業中でコミットしたくないけど、別のブランチで作業する必要がある場合等、一時保存が必要な場合
+- `$ git stash` - `git stash save`も同意義
+- `$ git stash list` - 避難した作業を一覧表示
+- `$ git stash apply` - 最新の避難した作業を復元可能(ステージの内容は復元されない)
+- `$ git stash --index` - ステージの内容も復元
+- `$ git stash apply <スタッシュ名>` - 特定の作業を復元する(`git stash apply stash@{1}`等)
+- `$ git stash drop` - 最新の作業を削除
+- `$ git stash drop <スタッシュ名>` - 特定の作業を削除する
+- `$ git stash clear` - 全作業を削除する
+
 ## .gitignore
   ```.gitignore
   # #から始まる行はコメント行
