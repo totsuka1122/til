@@ -19,3 +19,5 @@ $ go env | grep GOPATH
 export GOPATH=$HOME/go;
 export PATH=$PATH:$GOPATH/bin;
 ```
+ターミナルでexportを記述するとターミナルを起動するたびに実行する必要があるので、  
+`~/.bash_profile`に環境変数として設定してしまうのが楽です。
