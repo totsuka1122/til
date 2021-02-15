@@ -8,7 +8,7 @@ go env GOROOT
 ```
 - GOPATH
   - 外部パッケージのリソースが保存される(基本的には$HOME/go)
-  - 配下には/binがあり、その下にGoの実行バイナリが保存される
+  - 配下には/binがあり、その下にGoの実行バイナリが保存される(ソースコードはbinではなくpkg/mod)
 ```
 // GOPATHの取得
 go env GOPATH
