@@ -1,3 +1,19 @@
+# GOPATH と GOROOT
+- GOROOT
+  - goのインストールパスのこと(基本的には/usr/local/go)
+  - 配下には/binがあり、その下にgo, godoc, gofmtがある
+```
+// GOROOTの取得 
+go env GOROOT
+```
+- GOPATH
+  - 外部パッケージのリソースが保存される(基本的には$HOME/go)
+  - 配下には/binがあり、その下にGoの実行バイナリが保存される
+```
+// GOPATHの取得
+go env GOPATH
+```
+
 # パッケージをインストールしてもコマンドが実行できない場合
 パッケージをインストールして正しくcommandを入力しても実行できない場合、いわゆる「PATHが通っていない」状態かもしれません。
 ```
