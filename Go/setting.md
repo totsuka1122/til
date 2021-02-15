@@ -13,6 +13,11 @@ go env GOROOT
 // GOPATHの取得
 go env GOPATH
 ```
+- 設定
+```
+export GOPATH=$(go env GOPATH)
+export PATH=$PATH:$GOPATH/bin
+```
 
 # パッケージをインストールしてもコマンドが実行できない場合
 パッケージをインストールして正しくcommandを入力しても実行できない場合、いわゆる「PATHが通っていない」状態かもしれません。
