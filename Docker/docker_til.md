@@ -54,5 +54,9 @@ services:
 $ docker pull mysql  
 $ docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:latest
 ```
+```bash
+$ docker exec -it <コンテナ名> bash -p
+# mysql -u root -p
+```
 - `--name`の後ろはコンテナ名
 - `MYSQL_ROOT_PASSWORD=`の後ろはパスワード
