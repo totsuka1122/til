@@ -3,14 +3,14 @@
   - goのインストールパスのこと(基本的には/usr/local/go)
   - 配下には/binがあり、その下にgo, godoc, gofmtがある
 ```
-// GOROOTの取得 
+# GOROOTの取得 
 go env GOROOT
 ```
 - GOPATH
   - 外部パッケージのリソースが保存される(基本的には$HOME/go)
   - 配下には/binがあり、その下にGoの実行バイナリが保存される(ソースコードはbinではなくpkg/mod)
 ```
-// GOPATHの取得
+# GOPATHの取得
 go env GOPATH
 ```
 - 設定
