@@ -2,26 +2,26 @@
 - GOROOT
   - goのインストールパスのこと(基本的には/usr/local/go)
   - 配下には/binがあり、その下にgo, godoc, gofmtがある
-```
+```bash
 # GOROOTの取得 
 go env GOROOT
 ```
 - GOPATH
   - 外部パッケージのリソースが保存される(基本的には$HOME/go)
   - 配下には/binがあり、その下にGoの実行バイナリが保存される(ソースコードはbinではなくpkg/mod)
-```
+```bash
 # GOPATHの取得
 go env GOPATH
 ```
 - 設定
-```
+```bash
 export GOPATH=$(go env GOPATH)
 export PATH=$PATH:$GOPATH/bin
 ```
 
 # パッケージをインストールしてもコマンドが実行できない場合
 パッケージをインストールして正しくcommandを入力しても実行できない場合、いわゆる「PATHが通っていない」状態かもしれません。
-```
+```bash
 $ echo $GOPATH
 $ echo $PATH
 ```
@@ -32,11 +32,11 @@ $PATHはインストールしたパッケージのコマンドなどが記述さ
   
 1行目のコマンドを実行した時に空行が返る場合、デフォルト値（go v1.8より）が適用されています。  
 デフォルト値は下記コマンドで確認できます。  
-```
+```bash
 $ go env | grep GOPATH
 ```
 下記コマンドでPATHを通すことで、command not foundの事象は解決するかもしれません。
-```
+```bash
 export GOPATH=$HOME/go;
 export PATH=$PATH:$GOPATH/bin;
 ```
