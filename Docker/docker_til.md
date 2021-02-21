@@ -13,14 +13,32 @@ COPY main.go /echo
 CMD ["go", "run", "/echo/main.go"]
 ```
 ```bash
-docker image build -t <イメージ名>:<タグ名※省略時は"latest"になる> <Dockerfileのディレクトリパス>
+$ docker image build -t <イメージ名>:<タグ名※省略時は"latest"になる> <Dockerfileのディレクトリパス>
 ```
 ## コンテナの起動
 ```bash
 # ホスト側ポートにアクセス可
-docker container run -d -p <ホスト側ポート>:<コンテナ側ポート> <イメージ名>:<タグ名>
+$ docker container run -d -p <ホスト側ポート>:<コンテナ側ポート> <イメージ名>:<タグ名>
 # 起動時にシェルに入る(-it)
-docker container run -it <イメージ名>
+$ docker container run -it <イメージ名>
+```
+
+## docker-composeでコンテナを起動
+```docker-compose
+# docker-compose.yml
+version: "3"
+services:
+  echo:
+    image: example/echo:latest
+    ports:
+      - 9000:8080
+```
+```bash
+$ docker-compose up -d
+```
+これは以下で起動するのと同じ
+```bash
+$ docker container run -d -p 9000:8080 example/echo
 ```
 
 
