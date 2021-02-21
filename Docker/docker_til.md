@@ -48,7 +48,7 @@ $ docker container run -it <イメージ名>
 ```
 
 ### (b) docker-composeを使ってコンテナを起動
-```docker-compose
+```yml
 # docker-compose.yml
 version: "3"
 services:
@@ -63,6 +63,22 @@ $ docker-compose up -d
 これは以下で起動するのと同じ
 ```bash
 $ docker container run -d -p 9000:8080 example/echo
+```
+
+### (b-1) docker-composeを使って、Dockerfileからコンテナを作成
+
+```yml
+# docker-compose.yml
+version: "3"
+services:
+  echo:
+    build: . # Dockerfileが存在するディレクトリの相対パスを"build"に記載（imageの代わりにbuild属性を指定）
+    ports:
+      - 9000:8080
+```
+```bash
+# imageが作成済みの場合はビルドは省略されるが、Dockerfileの中身を書き換えたり、再度ビルドする必要がある場合は--buildをつける
+$ docker-compose up -d --build
 ```
 
 ### (c) コンテナの削除
