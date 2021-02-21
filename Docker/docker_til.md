@@ -1,7 +1,28 @@
-## dockerコマンド一覧
+# dockerコマンド一覧
 
 https://qiita.com/zembutsu/items/6e1ad18f0d548ce6c266
 
+## Dockerfileからイメージ作成
+```Dockerfile
+# Dockerfile
+FROM golang:1.9
+
+RUN mkdir /echo
+COPY main.go /echo
+
+CMD ["go", "run", "/echo/main.go"]
+```
+```bash
+docker image build -t <イメージ名>:<タグ名※省略時は"latest"になる> <Dockerfileのディレクトリパス>
+```
+## コンテナの起動
+```bash
+docker container run -d -p <ホスト側ポート>:<コンテナ側ポート> <イメージ名>:<タグ名>
+# ホスト側ポートにアクセス可
+```
+
+
+## オプション
 - `-d`オプションをつけると、常にバックグラウンドで起動するデタッチモードで起動できる
 - `-a` ― 停止中のコンテナも表示する。
 - `-s` ― ファイルサイズを表示する。
@@ -18,7 +39,7 @@ https://qiita.com/zembutsu/items/6e1ad18f0d548ce6c266
 - `-w` ― コンテナ内の作業ディレクトリを指定する。
 - `--net` ― 接続するDockerネットワークを指定する。
 
-
+# Sample
 ## golang
 
 Docker Hub: https://hub.docker.com/_/golang  
