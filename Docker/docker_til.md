@@ -23,6 +23,21 @@ https://hub.docker.com/
 $ docker pull mysql
 ```
 
+### (c) イメージの削除
+イメージの削除
+```bash
+$ docker rmi <イメージID>
+```
+
+不要なイメージを一括削除  
+※いくつか残ることがあるが、これらはDockerが判断して残している。何かしらの理由がある。
+```bash
+$ docker image prune
+
+# 使用していない全てのDockerリソースを削除する場合は、以下を実行
+$ docker system prune
+```
+
 ## 2. コンテナの起動
 ### (a) dockerコマンドでコンテナを起動
 ```bash
@@ -32,7 +47,7 @@ $ docker container run -d -p <ホスト側ポート>:<コンテナ側ポート> 
 $ docker container run -it <イメージ名>
 ```
 
-## (b) docker-composeを使ってコンテナを起動
+### (b) docker-composeを使ってコンテナを起動
 ```docker-compose
 # docker-compose.yml
 version: "3"
@@ -48,6 +63,17 @@ $ docker-compose up -d
 これは以下で起動するのと同じ
 ```bash
 $ docker container run -d -p 9000:8080 example/echo
+```
+
+### (c) コンテナの削除
+コンテナを削除
+```bash
+$ docker container rm <コンテナIDまたはコンテナ名>
+```
+
+実行していないコンテナを一括削除
+```bash
+$ docker container prune
 ```
 
 
