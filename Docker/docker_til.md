@@ -3,7 +3,7 @@
 https://qiita.com/zembutsu/items/6e1ad18f0d548ce6c266
 
 ## 1. イメージの作成
-### 1-1 Dockerfileからイメージ作成
+### a. Dockerfileからイメージ作成
 ```Dockerfile
 # Dockerfile
 FROM golang:1.9
@@ -17,7 +17,7 @@ CMD ["go", "run", "/echo/main.go"]
 $ docker image build -t <イメージ名>:<タグ名※省略時は"latest"になる> <Dockerfileのディレクトリパス>
 ```
 ## 2. コンテナの起動
-### 2-1 dockerコマンドでコンテナを起動
+### a. dockerコマンドでコンテナを起動
 ```bash
 # ホスト側ポートにアクセス可
 $ docker container run -d -p <ホスト側ポート>:<コンテナ側ポート> <イメージ名>:<タグ名>
@@ -25,7 +25,7 @@ $ docker container run -d -p <ホスト側ポート>:<コンテナ側ポート> 
 $ docker container run -it <イメージ名>
 ```
 
-## 2-2 docker-composeを使ってコンテナを起動
+## b. docker-composeを使ってコンテナを起動
 ```docker-compose
 # docker-compose.yml
 version: "3"
