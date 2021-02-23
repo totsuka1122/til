@@ -31,7 +31,8 @@ https://kubernetes.io/ja/docs/concepts/overview/components/
 
 - Deployment
   - 複数のReplicaSetを管理してローリングアップデートやロールバックなどデプロイを管理するリソース
-<img width="595" src="https://user-images.githubusercontent.com/70890327/108791579-c1c5c100-75c2-11eb-88b6-e76fa91a87cb.png">
+<img width="595" src="https://user-images.githubusercontent.com/70890327/108791579-c1c5c100-75c2-11eb-88b6-e76fa91a87cb.png">  
+
 - Service
   - Podへのエンドポイントを割り当てたり、負荷分散を行うためのリソース
   - ClusterIP
