@@ -158,6 +158,7 @@ $ docker exec -it {コンテナ名} bash -p
 - `MYSQL_ROOT_PASSWORD=`の後ろはパスワード
 
 ## node
+- Dockerfile
 ```Dockerfile
 FROM node:10.13-alpine
 
@@ -170,7 +171,7 @@ RUN npm install -g ionic cordova
 
 CMD ["sh"]　# デフォルトで node が起動するので sh を代わりに起動
 ```
-
+- docker-compose.yml
 ```docker-compose.yml
 version: '3'
 services:
@@ -183,6 +184,7 @@ services:
     - "8100:8100"
     tty: true
 ```
+- tree
 ```
 .
 ├── Dockerfile
