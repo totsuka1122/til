@@ -148,10 +148,10 @@ services:
 
 ```bash
 $ docker pull mysql  
-$ docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:latest
+$ docker run --name {コンテナ名} -e MYSQL_ROOT_PASSWORD={mysqlのパスワード} -d {イメージ名}:{タグ名}
 ```
 ```bash
-$ docker exec -it <コンテナ名> bash -p
+$ docker exec -it {コンテナ名} bash -p
 # mysql -u root -p
 ```
 - `--name`の後ろはコンテナ名
