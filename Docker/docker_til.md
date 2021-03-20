@@ -156,3 +156,37 @@ $ docker exec -it {コンテナ名} bash -p
 ```
 - `--name`の後ろはコンテナ名
 - `MYSQL_ROOT_PASSWORD=`の後ろはパスワード
+
+## node
+```Dockerfile
+FROM node:10.13-alpine
+
+RUN mkdir /working # 作業ディレクトリを作成
+
+WORKDIR /working # 作業ディレクトリを指定
+
+RUN npm update
+RUN npm install -g ionic cordova
+
+CMD ["sh"]　# デフォルトで node が起動するので sh を代わりに起動
+```
+
+```docker-compose.yml
+version: '3'
+services:
+  node_app:
+    build: . # Dockerfileのパス
+    image: watashino-image # イメージ名を指定
+    volumes:
+    - ./working:/working # マウントするディレクトリを指定(ローカルパス:コンテナのパス)
+    ports:
+    - "8100:8100"
+    tty: true
+```
+```
+.
+├── Dockerfile
+├── docker-compose.yml
+└── working
+    └── test.js
+```
