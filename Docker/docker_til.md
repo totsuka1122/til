@@ -192,3 +192,8 @@ services:
 └── working
     └── test.js
 ```
+- ビルドと実行
+```
+docker-compose build
+docker-compose up -d
+```
