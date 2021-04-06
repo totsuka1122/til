@@ -10,3 +10,17 @@ PS1='\[\033[1;32m\]\u@\h\[\033[00m\]:\[\033[1;34m\]\w\[\033[00m\]\[\033[1;31m\]$
 ```
 explorer.exe .
 ```
+## httpをhttpsにリダイレクトする方法
+サイト全体で移行する場合
+ではまず、サイト全体で“https”にリダイレクトさせる場合の記述方法です。
+これは、以下のように.htaccessファイルに記述しておくことで全てのページが“https://～”へリダイレクトされることになります。
+※“https”ではない場合、“https”へ301リダイレクトするという指示。
+```
+.htaccess
+```
+ファイルを作成し、以下を記載()
+```
+RewriteEngine on
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+```
