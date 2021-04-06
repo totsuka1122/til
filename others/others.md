@@ -7,11 +7,11 @@ PS1='\[\033[1;32m\]\u@\h\[\033[00m\]:\[\033[1;34m\]\w\[\033[00m\]\[\033[1;31m\]$
 [Gitのブランチ名をコンソールに表示する方法](https://qiita.com/daijinload/items/2bb0031a706ce347aca6)
 
 ## wslのディレクトリをエクスプローラーで開く
-[参考ページ](https://keywordfinder.jp/blog/seo/http-https-redirect/#htaccess)
 ```
 explorer.exe .
 ```
 ## httpをhttpsにリダイレクトする方法
+[参考ページ](https://keywordfinder.jp/blog/seo/http-https-redirect/#htaccess)
 サイト全体で移行する場合
 ではまず、サイト全体で“https”にリダイレクトさせる場合の記述方法です。
 これは、以下のように.htaccessファイルに記述しておくことで全てのページがリダイレクトされます。
