@@ -11,7 +11,7 @@ $ nvm --version
 0.38.0
 # command not found の場合はターミナル再起動
 ```
-- node.js LTSのインストール
+### node.js LTSのインストール
 ```
 $ nvm install --lts
 ```
@@ -20,7 +20,7 @@ $ node -v
 v14.16.1
 ```
 
-- yarnのインストール
+### yarnのインストール
 ```
 $npm install --global yarn
 ```
