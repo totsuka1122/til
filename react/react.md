@@ -21,7 +21,9 @@ CRA で作成したプロジェクトでは、ソースコードファイルは�
 
 - pkgのupdate
 package.jsonに記述してある各パッケージのバージョン範囲に従って、全てのインストール済みのパッケージを一括アップデートする
+
 ```
 yarn upgrade-interactive --latest
 ```
-- 
+- webpack
+[最新版で学ぶwebpack 5入門JavaScriptのモジュールバンドラ](https://ics.media/entry/12140/)

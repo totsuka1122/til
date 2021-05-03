@@ -313,3 +313,22 @@ const bar: number = undefined;
   strictNullChecks": true
 ```
 
+## インポート / エクスポート
+
+- TypeScriptでは拡張子を書くとエラーになる
+
+```ts
+import bar from './bar';
+```
+- 以上のimport文で読み込みをする場合、次の順にモジュールを探索していく
+- 最初に見つかったものが読み込まれ、全部ヒットしなかった時点でエラーを返す
+
+1. src/bar.ts
+2. src/bar.tsx
+3. src/bar.d.ts
+4. src/bar/package.json の types または typings プロパティで設定されている型定義ファイル
+5. src/bar/index.ts
+6. src/bar/index.tsx
+7. src/bar/index.d.ts
+
+
