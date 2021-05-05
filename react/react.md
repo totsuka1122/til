@@ -260,7 +260,7 @@ import { VFC } from "react";
 - Unmounting フェーズ …… コンポーネントが仮想 DOM から削除されるフェーズ
 - Error Handling フェーズ …… 子孫コンポーネントのエラーを検知、捕捉するフェーズ”
 
-![lifecycle](./img/ligecycle.png)
+![lifecycle](./img/lifecycle.png)
 
 >16.2 系までは `componentWillMount`, `componentWillReceiveProps`, `componentWillUpdate` というライフサイクルメソッドがあった。
 >これらはレンダリングの直前に実行されるメソッドで、けっこう多用されてたんだけどバージョン 17 から有効化された、最適化された完全非同期なレンダリングと相性が悪くて副作用を生みやすいので、16.3 より後からは公式から非推奨にされて、名前にもことごとく UNSAFE_ というプレフィックスをつけられてる。
