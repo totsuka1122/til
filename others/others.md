@@ -25,6 +25,12 @@ RewriteEngine on
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 ```
-# github action
+## github action
 
 ![Untitled Diagram](https://user-images.githubusercontent.com/70890327/117373592-7dca3300-af06-11eb-8228-1f12269595f7.png)
+
+## ISR (Incremental Static Regeneration)
+> 直訳すると、(段階的な静的サイト生成)となります。
+> 簡単に説明すると、リクエストに対して静的にビルドされたページを返す。かつ、有効期限を超えたら非同期で静的ページの再生成をSSRで行うことです。
+
+- [ISR(Incremental Static Regeneration)とは？](https://qiita.com/yoshii0110/items/db707ed61030c01c2353)
