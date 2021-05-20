@@ -1,5 +1,5 @@
 # install
-### ubuntuにgolangを入れる方法  
+## ubuntuにgolangを入れる方法  
 1. ```curl -O https://dl.google.com/go/go1.15.5.linux-amd64.tar.gz```   
 		- ubuntu上でこのコマンドを実行し、パッケージを取得する。   
 2. ```sudo tar -C /usr/local -xzf go1.15.5.linux-amd64.tar.gz```
@@ -12,7 +12,7 @@ export PATH=$PATH:/usr/local/go/bin
 export GOPRIVATE=github.com/artis-inc/*
 ```
 
-# GOPATH と GOROOT
+## GOPATH と GOROOT
 - GOROOT
   - goのインストールパスのこと(基本的には/usr/local/go)
   - 配下には/binがあり、その下にgo, godoc, gofmtがある
@@ -33,7 +33,7 @@ export GOPATH=$(go env GOPATH)
 export PATH=$PATH:$GOPATH/bin
 ```
 
-# パッケージをインストールしてもコマンドが実行できない場合
+## パッケージをインストールしてもコマンドが実行できない場合
 パッケージをインストールして正しくcommandを入力しても実行できない場合、いわゆる「PATHが通っていない」状態かもしれません。
 ```bash
 $ echo $GOPATH
@@ -56,3 +56,12 @@ export PATH=$PATH:$GOPATH/bin;
 ```
 ターミナルでexportを記述するとターミナルを起動するたびに実行する必要があるので、  
 `~/.bash_profile`に環境変数として設定してしまうのが楽です。
+
+## godocを使用する
+
+```sh
+go get golang.org/x/tools/cmd/godoc
+```
+```sh
+godoc -http=:6060
+```
