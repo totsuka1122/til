@@ -31,7 +31,7 @@ type TestResult struct {
 	average int
 }
 
-// グループ作成します
+// グループを作成します
 func NewGroup(name string, tr TestResult) Group {
 	g := Group{}
 	g.name = name
