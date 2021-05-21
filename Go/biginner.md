@@ -35,9 +35,9 @@ func NewTest(class string, point map[string]int) TestResult {
 
 // 平均点を計算します
 func (t *TestResult) CalcAverage() {
-	var s int
+	var sum int
 	for _, v := range t.point {
-		s += v
+		sum += v
 	}
 
 	t.average = s / len(t.point)
