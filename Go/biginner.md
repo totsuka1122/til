@@ -1,7 +1,7 @@
 ## 練習問題
 
 ```
-3クラスでテストを行いました。
+3グループでテストを行いました。
 以下の結果をもとに、「組の名前」「生徒名とその点数」「平均点」をクラスごとに出力してください。
 
 花組
@@ -17,17 +17,32 @@ Gさんは50点、Hさんは90点
 ```go
 package main
 
+import "fmt"
+
+// グループです
+type Group struct {
+	name       string
+	testResult TestResult
+}
+
 // テスト結果です
 type TestResult struct {
-	homeroomName string
-	point        map[string]int
-	average      int
+	point   map[string]int
+	average int
+}
+
+// グループ作成します
+func NewGroup(name string, tr TestResult) Group {
+	g := Group{}
+	g.name = name
+	g.testResult = tr
+
+	return g
 }
 
 // テスト結果を作成します
-func NewTest(class string, point map[string]int) TestResult {
+func NewTestResult(point map[string]int) TestResult {
 	t := TestResult{}
-	t.homeroomName = class
 	t.point = point
 
 	return t
@@ -35,9 +50,9 @@ func NewTest(class string, point map[string]int) TestResult {
 
 // 平均点を計算します
 func (t *TestResult) CalcAverage() {
-	var sum int
+	var s int
 	for _, v := range t.point {
-		sum += v
+		s += v
 	}
 
 	t.average = s / len(t.point)
@@ -61,15 +76,21 @@ func main() {
 		"H": 90,
 	}
 
-	h := NewTest("花組", hana)
-	t := NewTest("月組", tsuki)
-	y := NewTest("雪組", yuki)
+	h := NewTestResult(hana)
+	hh := NewGroup("花組", h)
 
-	for _, v := range []TestResult{h, t, y} {
-		v.CalcAverage()
+	t := NewTestResult(tsuki)
+	tt := NewGroup("月組", t)
+
+	y := NewTestResult(yuki)
+	yy := NewGroup("雪組", y)
+
+	for _, v := range []Group{hh, tt, yy} {
+		v.testResult.CalcAverage()
 		fmt.Printf("%+v\n", v)
 	}
 }
+
 ```
 
 ```
