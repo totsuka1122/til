@@ -22,7 +22,7 @@ select * from billing where JSON_SEARCH(content, 'one', 'c', NULL,  "$.invoice[*
 ```
 
 ## indexを貼って検索する
-Multi-Valued Indexes https://qiita.com/hmatsu47/items/3e49a473bc36aeefc706#:~:text=Multi-Valued%20Indexes%20%E3%81%A8%E3%81%AF,%E3%81%AB%E6%A9%9F%E8%83%BD%E3%81%99%E3%82%8B%20INDEX%20%E3%81%A7%E3%81%99%E3%80%82
+[Multi-Valued](Indexes https://qiita.com/hmatsu47/items/3e49a473bc36aeefc706#:~:text=Multi-Valued%20Indexes%20%E3%81%A8%E3%81%AF,%E3%81%AB%E6%A9%9F%E8%83%BD%E3%81%99%E3%82%8B%20INDEX%20%E3%81%A7%E3%81%99%E3%80%82)
 ```sql
 CREATE TABLE billing (
     id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
