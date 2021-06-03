@@ -51,3 +51,45 @@ func main() {
   }
 }
 ```
+
+## mapを整形して出力
+
+```go
+package main
+
+import (
+	"encoding/json"
+	"os"
+)
+
+func PrintMap(m map[string]interface{}) {
+	e := json.NewEncoder(os.Stdout)
+
+	e.SetIndent("", "  ")
+	e.Encode(m)
+}
+
+func main() {
+	m := map[string]interface{}{
+		"Name":  "Taro",
+		"Value": 3,
+		"Content": map[string]interface{}{
+			"Name":  "pen",
+			"Value": 5,
+		},
+	}
+
+	PrintMap(m)
+}
+```
+
+```
+{
+  "Content": {
+    "Name": "pen",
+    "Value": 5
+  },
+  "Name": "Taro",
+  "Value": 3
+}
+```
