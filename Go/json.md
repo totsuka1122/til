@@ -52,7 +52,7 @@ func main() {
 }
 ```
 
-## mapを整形して出力
+## mapを整形して出力する
 
 ```go
 package main
