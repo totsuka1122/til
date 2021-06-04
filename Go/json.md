@@ -93,3 +93,42 @@ func main() {
   "Value": 3
 }
 ```
+
+## 構造体を整形して出力
+```go
+package main
+
+import (
+	"encoding/json"
+	"os"
+)
+
+// サンプルの構造体
+type Hoge struct {
+	Name    string
+	Value   int
+	Content struct {
+		Name  string
+		Value int
+	}
+}
+
+// 構造体を整形して出力
+func PrintStruct(i interface{}) {
+	e := json.NewEncoder(os.Stdout)
+
+	e.SetIndent("", "  ")
+	e.Encode(i)
+}
+
+func main() {
+	// 適当に値を入れる
+	h := Hoge{}
+	h.Name = "Taro"
+	h.Value = 3
+	h.Content.Name = "pen"
+	h.Content.Value = 5
+
+	PrintStruct(h)
+}
+```
