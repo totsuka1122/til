@@ -80,7 +80,7 @@ func main() {
 		if value, ok := v.(Namer); ok {
 			fmt.Println(value.Name())
 		} else {
-			fmt.Println("型アサーションに失敗しました", value)
+			fmt.Println("型アサーションに失敗しました")
 		}
 	}
 }
