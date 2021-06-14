@@ -85,6 +85,15 @@ func main() {
 	}
 }
 ```
+出力結果
+```
+HOGE
+FUGA
+MOGE
+HOGE
+FUGA
+MOGE
+```
 
 ## 練習問題
 
