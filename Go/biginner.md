@@ -1,3 +1,87 @@
+## 空インターフェース問題
+
+```go
+package main
+
+import (
+	"fmt"
+)
+
+type Hoge struct {
+	name string
+}
+
+type Fuga struct {
+	name string
+}
+
+type Moge struct {
+	name string
+}
+
+func (h *Hoge) HogeName() string {
+	return h.name
+}
+
+func (h *Hoge) Name() string {
+	return h.name
+}
+
+func (f *Fuga) FugaName() string {
+	return f.name
+}
+
+func (f *Fuga) Name() string {
+	return f.name
+}
+
+func (m *Moge) MogeName() string {
+	return m.name
+}
+
+func (m *Moge) Name() string {
+	return m.name
+}
+
+type Namer interface {
+	Name() string
+}
+
+func main() {
+	// 各構造体に値を入れる
+	h := Hoge{name: "HOGE"}
+	f := Fuga{name: "FUGA"}
+	m := Moge{name: "MOGE"}
+
+	// 作成した構造体を空インターフェースに入れる
+	// 型が違っても、空インターフェースには入る
+	s := []interface{}{h, f, m}
+
+	// 型スイッチ版
+	for _, v := range s {
+		switch value := v.(type) {
+		case Hoge:
+			// Hoge構造体のメソッドが使える(valueがHoge構造体に変換されているため)
+			fmt.Println(value.HogeName())
+		case Fuga:
+			// Fuga構造体のメソッドが使える(valueがFuga構造体に変換されているため)
+			fmt.Println(value.FugaName())
+		case Moge:
+			// Moge構造体のメソッドが使える(valueがMoge構造体に変換されているため)
+			fmt.Println(value.MogeName())
+		}
+	}
+
+	// 型アサーション版
+	// Namerインターフェースに型アサーション
+	for _, v := range s {
+		if value, ok := v.(Namer); ok {
+			fmt.Println(value.Name())
+		}
+	}
+}
+```
+
 ## 練習問題
 
 ```
