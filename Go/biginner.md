@@ -23,7 +23,7 @@ func (h *Hoge) HogeName() string {
 	return h.name
 }
 
-func (h *Hoge) Name() string {
+func (h Hoge) Name() string {
 	return h.name
 }
 
@@ -31,7 +31,7 @@ func (f *Fuga) FugaName() string {
 	return f.name
 }
 
-func (f *Fuga) Name() string {
+func (f Fuga) Name() string {
 	return f.name
 }
 
@@ -39,7 +39,7 @@ func (m *Moge) MogeName() string {
 	return m.name
 }
 
-func (m *Moge) Name() string {
+func (m Moge) Name() string {
 	return m.name
 }
 
@@ -69,6 +69,8 @@ func main() {
 		case Moge:
 			// Moge構造体のメソッドが使える(valueがMoge構造体に変換されているため)
 			fmt.Println(value.MogeName())
+		default:
+			fmt.Println("型スイッチに失敗しました")
 		}
 	}
 
@@ -77,6 +79,8 @@ func main() {
 	for _, v := range s {
 		if value, ok := v.(Namer); ok {
 			fmt.Println(value.Name())
+		} else {
+			fmt.Println("型アサーションに失敗しました", value)
 		}
 	}
 }
