@@ -67,6 +67,9 @@ insert into billing set content='{"n": 2, "nn": 1, "created":"2021-05-31T00:00:0
 insert into billing set content='{"n": 2, "nn": 2, "created":"2021-05-31T00:00:00+09:00", "contract_id": "6a3bc157-228e-421a-b707-615a934137af"}';
 insert into billing set content='{"n": 1, "nn": 1, "created":"2021-05-31T00:00:00+09:00", "contract_id": "6a3bc157-228e-421a-b707-615a934137af"}';
 insert into billing set content='{"n": 1, "nn": 0, "created":"2021-05-31T00:00:00+09:00", "contract_id": "6a3bc157-228e-421a-b707-615a934137af"}';
+insert into billing set content='{"n": 1, "nn": 1, "created":"2021-06-31T00:00:00+09:00", "contract_id": "6a3bc157-228e-421a-b707-615a934137af"}';
+insert into billing set content='{"n": 1, "nn": 1, "created":"2020-05-31T00:00:00+09:00", "contract_id": "6a3bc157-228e-421a-b707-615a934137af"}';
+insert into billing set content='{"n": 1, "nn": 1, "created":"2020-05-30T00:00:00+09:00", "contract_id": "6a3bc157-228e-421a-b707-615a934137af"}';
 ```
 
 ```sh
