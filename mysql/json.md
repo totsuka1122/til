@@ -62,3 +62,8 @@ mysql> select * from billing where "c" MEMBER OF (content->'$.invoice[*].name');
 ```sh
 SELECT id, content, JSON_EXTRACT(content, '$.mmm') AS mmm FROM billing ORDER BY mmm ASC;
 ```
+
+複数カラムでソートをかける
+```sh
+select * from billing order by json_extract(content, '$.n') asc, json_extract(content, '$.nn') asc;
+```
