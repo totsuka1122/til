@@ -80,3 +80,8 @@ SELECT id, content, JSON_EXTRACT(content, '$.mmm') AS mmm FROM billing ORDER BY 
 ```sh
 select * from billing order by json_extract(content, '$.n') asc, json_extract(content, '$.nn') asc;
 ```
+
+whereと合わせる
+```sh
+select * from billing where json_extract(content, '$.n')=1 order by json_extract(content, '$.contract_id') asc;
+```
