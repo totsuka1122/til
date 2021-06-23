@@ -81,7 +81,7 @@ SELECT id, content, JSON_EXTRACT(content, '$.mmm') AS mmm FROM billing ORDER BY 
 select * from billing order by json_extract(content, '$.n') asc, json_extract(content, '$.nn') asc;
 ```
 
-whereと合わせる
+whereと合わせる + Limit/Offset
 ```sh
-select * from billing where json_extract(content, '$.n')=1 order by json_extract(content, '$.contract_id') asc;
+select * from billing where json_extract(content, '$.n')=1 order by json_extract(content, '$.contract_id') asc limit 5 offset 0;
 ```
