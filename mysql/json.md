@@ -85,3 +85,51 @@ whereと合わせる + Limit/Offset
 ```sh
 select * from billing where json_extract(content, '$.n')=1 order by json_extract(content, '$.contract_id') asc limit 5 offset 0;
 ```
+
+## 竹内さんからもらった
+
+```sql
+CREATE TABLE t1 (jdoc JSON);
+
+INSERT INTO t1 VALUES('{"name": "aaa1", "type": 1, "available": true, "start": "2021-06-25T00:00:00+09:00"}');
+INSERT INTO t1 VALUES('{"name": "aaa2", "type": 1, "available": false, "start": "2021-06-26T00:00:00+09:00"}');
+INSERT INTO t1 VALUES('{"name": "aaa3", "type": 1, "available": false, "start": "2021-06-27T00:00:00+09:00"}');
+INSERT INTO t1 VALUES('{"name": "aaa4", "type": 1, "available": true, "start": "2021-06-28T00:00:00+09:00"}');
+INSERT INTO t1 VALUES('{"name": "aaa1", "type": 2, "available": true, "start": "2021-06-25T00:00:00+09:00"}');
+INSERT INTO t1 VALUES('{"name": "aaa2", "type": 2, "available": false, "start": "2021-06-24T00:00:00+09:00"}');
+INSERT INTO t1 VALUES('{"name": "aaa3", "type": 2, "available": false, "start": "2021-06-23T00:00:00+09:00"}');
+INSERT INTO t1 VALUES('{"name": "aaa4", "type": 2, "available": true, "start": "2021-06-22T00:00:00+09:00"}');
+INSERT INTO t1 VALUES('{"name": "aaa1", "type": 3, "available": true, "start": "2021-06-25T00:00:00+09:00"}');
+INSERT INTO t1 VALUES('{"name": "aaa2", "type": 3, "available": false, "start": "2021-07-25T00:00:00+09:00"}');
+INSERT INTO t1 VALUES('{"name": "aaa3", "type": 3, "available": false, "start": "2021-08-25T00:00:00+09:00"}');
+INSERT INTO t1 VALUES('{"name": "aaa4", "type": 3, "available": true, "start": "2021-09-25T00:00:00+09:00"}');
+INSERT INTO t1 VALUES('{"name": "aaa1", "type": 4, "available": true, "start": "2021-06-25T00:00:00+09:00"}');
+INSERT INTO t1 VALUES('{"name": "aaa2", "type": 4, "available": false, "start": "2021-05-25T00:00:00+09:00"}');
+INSERT INTO t1 VALUES('{"name": "aaa3", "type": 4, "available": false, "start": "2021-04-25T00:00:00+09:00"}');
+INSERT INTO t1 VALUES('{"name": "aaa4", "type": 4, "available": true, "start": "2021-03-25T00:00:00+09:00"}');
+
+
+
+mysql> SELECT * FROM t1 ORDER BY jdoc->"$.available" ASC, jdoc->"$.type" DESC, CAST(jdoc->>"$.start" AS DATETIME) ASC;
++---------------------------------------------------------------------------------------+
+| jdoc                                                                                  |
++---------------------------------------------------------------------------------------+
+| {"name": "aaa3", "type": 4, "start": "2021-04-25T00:00:00+09:00", "available": false} |
+| {"name": "aaa2", "type": 4, "start": "2021-05-25T00:00:00+09:00", "available": false} |
+| {"name": "aaa2", "type": 3, "start": "2021-07-25T00:00:00+09:00", "available": false} |
+| {"name": "aaa3", "type": 3, "start": "2021-08-25T00:00:00+09:00", "available": false} |
+| {"name": "aaa3", "type": 2, "start": "2021-06-23T00:00:00+09:00", "available": false} |
+| {"name": "aaa2", "type": 2, "start": "2021-06-24T00:00:00+09:00", "available": false} |
+| {"name": "aaa2", "type": 1, "start": "2021-06-26T00:00:00+09:00", "available": false} |
+| {"name": "aaa3", "type": 1, "start": "2021-06-27T00:00:00+09:00", "available": false} |
+| {"name": "aaa4", "type": 4, "start": "2021-03-25T00:00:00+09:00", "available": true}  |
+| {"name": "aaa1", "type": 4, "start": "2021-06-25T00:00:00+09:00", "available": true}  |
+| {"name": "aaa1", "type": 3, "start": "2021-06-25T00:00:00+09:00", "available": true}  |
+| {"name": "aaa4", "type": 3, "start": "2021-09-25T00:00:00+09:00", "available": true}  |
+| {"name": "aaa4", "type": 2, "start": "2021-06-22T00:00:00+09:00", "available": true}  |
+| {"name": "aaa1", "type": 2, "start": "2021-06-25T00:00:00+09:00", "available": true}  |
+| {"name": "aaa1", "type": 1, "start": "2021-06-25T00:00:00+09:00", "available": true}  |
+| {"name": "aaa4", "type": 1, "start": "2021-06-28T00:00:00+09:00", "available": true}  |
++---------------------------------------------------------------------------------------+
+16 rows in set, 16 warnings (0.00 sec)
+```
