@@ -45,3 +45,16 @@ jobs:
 
 ## 機密情報を取得したい場合
 - settings > secrets に保存する
+
+## jobを直列に扱いたい場合
+jobは基本的に並列に実行されるが、以下のように書けば実行順序を制御できる
+
+```yaml
+jobs:
+  unit-test:
+    ...
+  lint:
+    ...
+  deploy:
+    needs: [unit-test, lint]
+```
