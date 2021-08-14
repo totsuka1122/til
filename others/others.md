@@ -10,6 +10,10 @@ PS1='\[\033[1;32m\]\u@\h\[\033[00m\]:\[\033[1;34m\]\w\[\033[00m\]\[\033[1;31m\]$
 ```
 explorer.exe .
 ```
+
+## wslにCentOSを入れる
+- https://www.geekfeed.co.jp/geekblog/install_centos8_on_wsl2_for_free
+
 ## httpをhttpsにリダイレクトする方法
 [参考ページ](https://keywordfinder.jp/blog/seo/http-https-redirect/#htaccess)  
 サイト全体で移行する場合
