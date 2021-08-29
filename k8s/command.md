@@ -33,18 +33,37 @@ kubectl config use-context <コンテキスト名>
 gcloud container clusters get-credentials <クラスタ名> --region asia-northeast1 --project <プロジェクト名>
 ```
 
-nodeの情報を確認
+Nodeの情報を確認
 
 ```shell
 kubectl get node -o wide
+# 詳細を出力
+kubectl describe node <Node名>
 ```
 
 Podの一覧を取得
 
 ```shell
 kubectl get pods
+# ラベルを表示する場合
+kubectl get pods --show-labels
 # 詳細を表示する場合
 kubectl get pod -o wide
+# ラベルを指定して表示する場合
+kubectl get pods -l <ラベル名>=<値1>,<値2>
+# YAML形式でPodの詳細情報リストを出力
+kubectl get pods -o yaml <Pod名>
+
+# 詳細を出力
+kubectl describe pod <Pod名>
+```
+
+Pod内のコンテナでコマンドを実行
+
+```shell
+kubectl exec -it <Pod名> -- /bin/bash
+# 複数のコンテナが入ったPodの特定のコンテナでコマンドを実行
+kubectl exec -it <Pod名> -c <コンテナ名> -- /bin/bash
 ```
 
 ## リソース関係のコマンド
@@ -69,6 +88,13 @@ kubectl apply -f <yaml>
 kubectl delete -f <yaml> [--wait]
 ```
 
+リソース使用量を確認
+
+```shell
+# Nodeのリソース使用量を確認
+kubectl top node
+```
+
 ## gcloudコマンド
 
 現在のログイン状況を確認
@@ -81,7 +107,7 @@ gcloud config list
 
 ```shell
 gcloud auth login
-# エラーが出る場合は
+# エラーが出る場合は以下を試す
 gcloud auth login --no-launch-browser
 ```
 
