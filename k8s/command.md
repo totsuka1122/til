@@ -152,6 +152,12 @@ gcloud auth login
 gcloud auth login --no-launch-browser
 ```
 
+プロジェクトの変更
+
+```shell
+gcloud config set project <プロジェクトID>
+```
+
 ## 参考サイト
 
 - [フューチャー技術ブログ：GKE Autopilotを触ってみた](https://future-architect.github.io/articles/20210318/)
