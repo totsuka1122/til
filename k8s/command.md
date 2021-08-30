@@ -36,7 +36,11 @@ gcloud container clusters get-credentials <クラスタ名> --region asia-northe
 Nodeの情報を確認
 
 ```shell
+# -oは--outputでも可
 kubectl get node -o wide
+```
+
+```shell
 # 詳細を出力
 kubectl describe node <Node名>
 ```
@@ -45,15 +49,29 @@ Podの一覧を取得
 
 ```shell
 kubectl get pods
+```
+
+```shell
 # ラベルを表示する場合
 kubectl get pods --show-labels
+```
+
+```shell
 # 詳細を表示する場合
 kubectl get pod -o wide
+```
+
+```shell
 # ラベルを指定して表示する場合
 kubectl get pods -l <ラベル名>=<値1>,<値2>
+```
+
+```shell
 # YAML形式でPodの詳細情報リストを出力
 kubectl get pods -o yaml <Pod名>
+```
 
+```shell
 # 詳細を出力
 kubectl describe pod <Pod名>
 ```
@@ -62,8 +80,18 @@ Pod内のコンテナでコマンドを実行
 
 ```shell
 kubectl exec -it <Pod名> -- /bin/bash
+```
+
+```shell
 # 複数のコンテナが入ったPodの特定のコンテナでコマンドを実行
+# コンテナを指定しないと、defaultのコンテナ(最初に立ち上げたコンテナ)が選択される
 kubectl exec -it <Pod名> -c <コンテナ名> -- /bin/bash
+```
+
+レプリカセットの一覧を取得
+
+```shell
+kubectl get replicasets -o wide
 ```
 
 ## リソース関係のコマンド
@@ -93,6 +121,19 @@ kubectl delete -f <yaml> [--wait]
 ```shell
 # Nodeのリソース使用量を確認
 kubectl top node
+```
+
+## ログの出力
+
+Pod内のコンテナのログを出力
+
+```shell
+kubectl logs <Pod名>
+```
+
+```shell
+# 複数コンテナが入ったPodでコンテナを指定してログを出力
+kubectl logs <Pod名> -c <コンテナ名>
 ```
 
 ## gcloudコマンド
