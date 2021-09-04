@@ -6,6 +6,12 @@ PS1='\[\033[1;32m\]\u:\[\033[1;34m\]\w\[\033[00m\]\[\033[1;31m\]$(__git_ps1)\[\0
 ```
 [Gitのブランチ名をコンソールに表示する方法](https://qiita.com/daijinload/items/2bb0031a706ce347aca6)
 
+## llコマンド
+.bashrc に追記
+```
+alias ll='ls -alF'
+```
+
 ## wslのディレクトリをエクスプローラーで開く
 ```
 explorer.exe .
