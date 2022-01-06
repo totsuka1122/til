@@ -3,10 +3,7 @@ app
 ```go
 var Deligate func(ctx context.Context, f func(event.Repository) error)
 
-// アーティスアカウントが作成された時のドメインイベントを処理します
-//
-// オブジェクトを`*`でポリシーを登録します。
-var HandleArtisAccountCreatedEvent = func(ctx context.Context, m map[string]interface{}) error {
+var Handle = func(ctx context.Context, m map[string]interface{}) error {
 	Deligate(ctx, func(repo event.Repository) error {
 		aid := seeker.Str(m, []string{"account_id"})
 
