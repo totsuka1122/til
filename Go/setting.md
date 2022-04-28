@@ -76,11 +76,11 @@ cd /usr/local
 ```
 /usr/localで実行
 ```sh
-wget https://dl.google.com/go/go1.16.6.linux-amd64.tar.gz
+sudo wget https://dl.google.com/go/go1.16.6.linux-amd64.tar.gz
 ```
-以下はsudoで実行？
+
 ```sh
-rm -rf /usr/local/go && tar -C /usr/local -xzf go1.16.6.linux-amd64.tar.gz
+sudo rm -rf /usr/local/go && tar -C /usr/local -xzf go1.16.6.linux-amd64.tar.gz
 ```
 再起動で完了
 ```sh
